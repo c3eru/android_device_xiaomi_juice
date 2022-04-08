@@ -50,6 +50,9 @@ BUILD_BROKEN_MISSING_REQUIRED_MODULES := true
 # Camera
 TARGET_USES_QTI_CAMERA_DEVICE := true
 
+# DT2W
+TARGET_TAP_TO_WAKE_NODE := "/sys/touchpanel/double_tap"
+
 # Display
 TARGET_USES_HWC2 := true
 TARGET_USES_ION := true
@@ -167,7 +170,6 @@ TARGET_BOARD_PLATFORM_GPU := qcom-adreno610
 # Power
 TARGET_USES_INTERACTION_BOOST := true
 TARGET_POWERHAL_MODE_EXT := $(DEVICE_PATH)/power/power-mode.cpp
-TARGET_TAP_TO_WAKE_NODE := "/sys/touchpanel/double_tap"
 
 # Properties
 TARGET_PRODUCT_PROP += $(DEVICE_PATH)/configs/properties/product.prop
@@ -185,6 +187,7 @@ TARGET_PROVIDES_QTI_TELEPHONY_JAR := true
 SELINUX_IGNORE_NEVERALLOWS=true
 include device/qcom/sepolicy/SEPolicy.mk
 SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/private
+BOARD_VENDOR_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
 
 # SurfaceFlinger
 TARGET_USE_AOSP_SURFACEFLINGER := true
