@@ -1,0 +1,8 @@
+service vendor.power /vendor/bin/hw/android.hardware.power-service
+    class hal
+    user system
+    group system
+
+# initialize powerHAL when boot is completed
+on property:sys.boot_completed=1
+    setprop vendor.powerhal.init 1

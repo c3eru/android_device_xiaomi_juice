@@ -2,6 +2,7 @@ on boot
     # Touchpanel
     chown system system /sys/touchpanel/double_tap
     chmod 0664 /sys/touchpanel/double_tap
+    write /sys/touchpanel/double_tap 1
 
     # Sunfish cpuset configuration 
     write /dev/cpuset/camera-daemon/cpus 0-7
